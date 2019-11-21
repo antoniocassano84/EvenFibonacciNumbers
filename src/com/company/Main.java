@@ -21,5 +21,7 @@ public class Main {
             System.out.println("Sum is " + sum);
             System.out.println("Computation Time (milliseconds) for fibonacci_recursive: " +
                     (postTime-preTime));
+
+        System.out.println(Fibonacci.fibonacci_recursive(-2));
         }
     }
