@@ -2,9 +2,8 @@ package test;
 
 import com.company.Fibonacci;
 import org.junit.Assert;
-import org.junit.Rule;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.ExpectedException;
 
 
 class FibonacciTest {
@@ -17,13 +16,9 @@ class FibonacciTest {
         }
     }
 
-    @Rule
-    public ExpectedException expectedEx = ExpectedException.none();
-
     @Test
-    public void testIllegalArgumentException() throws IllegalArgumentException {
-        expectedEx.expect(IllegalArgumentException.class);
-        expectedEx.expectMessage("Negative numbers not valid");
-        Fibonacci.fibonacci_recursive(-1);
+    void testIllegalArgumentException() {
+        Assertions.assertThrows(IllegalArgumentException.class,
+                () -> Fibonacci.fibonacci_recursive(-2));
     }
 }
